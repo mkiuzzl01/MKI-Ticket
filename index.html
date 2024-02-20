@@ -210,34 +210,34 @@
                       <!-- this seating system section -->
                       <div id="seat-list" class="grid grid-cols-2 gap-2 space-x-24">
                         <div class="grid grid-cols-3 gap-4 items-center">
-                        <button class="">A</button>
+                        <button disabled class="">A</button>
                         <button id="A1" class="btn">A1</button>
                         <button id="A2" class="btn">A2</button>
-                        <button class="">B</button>
+                        <button disabled class="">B</button>
                         <button id="B1" class="btn">B1</button>
                         <button id="B2" class="btn">B2</button>
-                        <button class="">C</button>
+                        <button disabled class="">C</button>
                         <button id="C1" class="btn">C1</button>
                         <button id="C2" class="btn">C2</button>
-                        <button class="">D</button>
+                        <button disabled class="">D</button>
                         <button id="D1" class="btn">D1</button>
                         <button id="D2" class="btn">D2</button>
-                        <button class="">E</button>
+                        <button disabled class="">E</button>
                         <button id="E1" class="btn">E1</button>
                         <button id="E2" class="btn">E2</button>
-                        <button class="">F</button>
+                        <button disabled class="">F</button>
                         <button id="F1" class="btn">F1</button>
                         <button id="F2" class="btn">F2</button>
-                        <button class="">G</button>
+                        <button disabled class="">G</button>
                         <button id="G1" class="btn">G1</button>
                         <button id="G2" class="btn">G2</button>
-                        <button class="">H</button>
+                        <button disabled class="">H</button>
                         <button id="H1" class="btn">H1</button>
                         <button id="H2" class="btn">H2</button>
-                        <button class="">I</button>
+                        <button disabled class="">I</button>
                         <button id="I1" class="btn">I1</button>
                         <button id="I2" class="btn">I2</button>
-                        <button class="">J</button>
+                        <button disabled class="">J</button>
                         <button id="J1" class="btn">J1</button>
                         <button id="J2" class="btn">J2</button>
                         </div>
@@ -275,7 +275,7 @@
                     <table class="table inter">
                       <thead class="border-dashed border-b-2">
                         <tr class="text-black">
-                          <th>Seat <span id="add-Seat" class="text-[#1DD100] p-2"></span></th>
+                          <th>Seat <span id="add-Seat" class="text-[#1DD100] text-lg"></span></th>
                           <th>Class</th>
                           <th>Price</th>
                         </tr>
@@ -288,6 +288,9 @@
                       <div class="flex justify-between font-medium text-black">
                         <p>Total Price</p>
                         <p>BDT <span id="Total-price"></span></p>
+                      </div>
+                      <div>
+                        <span id="show-discount" class="text-red-500" ></span>
                       </div>
                       <div id="hide">
                         <input id="input-felid" type="text" class="input" placeholder="Have any coupon?">

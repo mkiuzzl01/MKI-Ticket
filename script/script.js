@@ -54,11 +54,12 @@ function append(element) {
   tr.appendChild(td3);
 }
 //Error massage function
-function massage(){
-    const getID = getElement('massage');
+function massage(element,content){
+    const getID = getElement(element);
     const p = document.createElement('p');
-    p.textContent = 'This Seat Already Booked';
+    p.textContent = content;
     getID.appendChild(p);
+    return content;
 }
 
 // Total Price function
@@ -76,6 +77,7 @@ function applyBtn(){
     if (lowerCase === 'new15'){
         const getID = getElementValue('Grand-Total');
         const discount = (getID * 15)/100;
+        massage('show-discount','Discount'+' '+'Price'+' '+discount)
         const discountPrice = getID - discount;
         setElementValue('Grand-Total', discountPrice);
         const Element = getElement('hide');
@@ -84,6 +86,7 @@ function applyBtn(){
     }else if (lowerCase === 'couple 20'){
         const getID = getElementValue('Grand-Total');
         const discount = (getID * 20)/100;
+        massage('show-discount','Discount'+' '+'Price'+' '+discount)
         const discountPrice = getID - discount;
         setElementValue('Grand-Total', discountPrice);
         const Element = getElement('hide');
@@ -145,7 +148,7 @@ function seatList() {
           append(selected);
           totalPrice();
         } else {
-            massage();
+            massage('massage','This Seat Already Booked');
         }
       }
     }
