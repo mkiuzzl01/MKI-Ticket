@@ -90,19 +90,6 @@ function applyBtn(){
         Element.classList.add('hidden')
     }
 }
-document.getElementById('input-felid').addEventListener('keyup',function(even){
-    const value = even.target.value;
-    const inputValue = value.toLowerCase();
-    const btn = getElement('btn-disable');
-
-    if (inputValue === 'new15' || inputValue === 'couple 20'){
-        btn.removeAttribute("disabled");
-    }else{
-        btn.setAttribute("disabled", true);
-      }
-
-})
-
 
 // Add event listener during initialization
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,10 +110,32 @@ function seatList() {
     seats.push(seat.innerText);
   }
 
+  
   const limit = [];
-
   document.addEventListener("click", function (event) {
     const selected = event.target.innerText.trim();
+    
+// When four seat selected so this button is enable
+    document.getElementById('phone').addEventListener('keyup',function(even){
+        const inputFelid = even.target.value;
+        const convertInputFelid = parseInt(inputFelid);
+        console.log(convertInputFelid);
+
+        if (!isNaN(convertInputFelid) && typeof convertInputFelid === 'number' && selected){
+         const submitBtn = getElement('submit');
+         submitBtn.removeAttribute("disabled");
+        }else{
+            btn.setAttribute("disabled", true);
+          }
+  })
+
+//when coupon apply Available
+  const btn = getElement('btn-disable');
+    if (limit.length === 3){
+        btn.removeAttribute("disabled");
+    }
+
+//set background color and set number updated
     if (seats.includes(selected)) {
       if (limit.length < 4) {
         if (!limit.includes(selected)) {
