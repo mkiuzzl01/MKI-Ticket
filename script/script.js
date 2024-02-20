@@ -68,19 +68,42 @@ function totalPrice() {
     const TotalPrice = setElementValue('Total-price', price);
     const GrandTotalPrice = setElementValue('Grand-Total', price);
 }
+
 //Apply coupon function
 function applyBtn(){
     const getID = getElement('input-felid').value;
     const lowerCase = getID.toLowerCase();
-    if (lowerCase === 'new15' || lowerCase === 'couple 20'){
+    if (lowerCase === 'new15'){
         const getID = getElementValue('Grand-Total');
         const discount = (getID * 15)/100;
         const discountPrice = getID - discount;
         setElementValue('Grand-Total', discountPrice);
         const Element = getElement('hide');
         Element.classList.add('hidden')
+
+    }else if (lowerCase === 'couple 20'){
+        const getID = getElementValue('Grand-Total');
+        const discount = (getID * 20)/100;
+        const discountPrice = getID - discount;
+        setElementValue('Grand-Total', discountPrice);
+        const Element = getElement('hide');
+        Element.classList.add('hidden')
     }
 }
+document.getElementById('input-felid').addEventListener('keyup',function(even){
+    const value = even.target.value;
+    const inputValue = value.toLowerCase();
+    const btn = getElement('btn-disable');
+
+    if (inputValue === 'new15' || inputValue === 'couple 20'){
+        btn.removeAttribute("disabled");
+    }else{
+        btn.setAttribute("disabled", true);
+      }
+
+})
+
+
 // Add event listener during initialization
 document.addEventListener("DOMContentLoaded", function () {
   seatList();
