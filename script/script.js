@@ -118,7 +118,7 @@ function seatList() {
   document.addEventListener("click", function (event) {
     const selected = event.target.innerText.trim();
     
-// When four seat selected so this button is enable
+// When seat selected and number submitted then this button is enable
     document.getElementById('phone').addEventListener('keyup',function(even){
         const inputFelid = even.target.value;
         const convertInputFelid = parseInt(inputFelid);
@@ -134,8 +134,10 @@ function seatList() {
 
 //when coupon apply Available
   const btn = getElement('btn-disable');
-    if (limit.length === 3){
-        btn.removeAttribute("disabled");
+    if (limit.length >= 4 ){
+      btn.removeAttribute("disabled");
+    }else{
+      btn.setAttribute("disabled", true);
     }
 
 //set background color and set number updated
