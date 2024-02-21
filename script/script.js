@@ -75,22 +75,25 @@ function applyBtn(){
     const getID = getElement('input-felid').value;
     const lowerCase = getID.toLowerCase();
     if (lowerCase === 'new15'){
-        const getID = getElementValue('Grand-Total');
-        const discount = (getID * 15)/100;
-        massage('show-discount','Discount'+' '+'Price'+' '+discount)
-        const discountPrice = getID - discount;
-        setElementValue('Grand-Total', discountPrice);
-        const Element = getElement('hide');
-        Element.classList.add('hidden')
-
+      const getID = getElementValue('Grand-Total');
+      const discount = (getID * 15)/100;
+      massage('show-discount','Discount'+' '+'Price'+' '+discount)
+      const discountPrice = getID - discount;
+      setElementValue('Grand-Total', discountPrice);
+      const Element = getElement('hide');
+      Element.classList.add('hidden');
+      
     }else if (lowerCase === 'couple 20'){
-        const getID = getElementValue('Grand-Total');
-        const discount = (getID * 20)/100;
-        massage('show-discount','Discount'+' '+'Price'+' '+discount)
-        const discountPrice = getID - discount;
-        setElementValue('Grand-Total', discountPrice);
-        const Element = getElement('hide');
-        Element.classList.add('hidden')
+      const getID = getElementValue('Grand-Total');
+      const discount = (getID * 20)/100;
+      massage('show-discount','Discount'+' '+'Price'+' '+discount)
+      const discountPrice = getID - discount;
+      setElementValue('Grand-Total', discountPrice);
+      const Element = getElement('hide');
+      Element.classList.add('hidden');
+      
+    }else{
+      massage('show-discount', 'Invalid coupon code!');
     }
 }
 
@@ -133,12 +136,13 @@ function seatList() {
   })
 
 //when coupon apply Available
-  const btn = getElement('btn-disable');
-    if (limit.length >= 4 ){
-      btn.removeAttribute("disabled");
-    }else{
-      btn.setAttribute("disabled", true);
-    }
+  
+const btn = getElement('btn-disable');
+if (limit.length >= 4){
+  btn.removeAttribute("disabled");
+}else{
+  btn.setAttribute("disabled", true);
+}
 
 //set background color and set number updated
     if (seats.includes(selected)) {
